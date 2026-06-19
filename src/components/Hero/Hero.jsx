@@ -99,6 +99,10 @@ function Hero() {
             </div>
             <div className="hero-content">
                 <div className="hero-left">
+                    <div className="hero-badge">
+                        <span className="badge-dot"></span>
+                        Available for Internships
+                    </div>
                      <h1>
                         DURGESH 
                         <span>KUMAR ROUT</span>
