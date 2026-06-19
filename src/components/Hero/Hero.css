@@ -84,6 +84,7 @@
     z-index: 1;
     pointer-events: none;
     user-select: none;
+    animation: pulseBg 6s ease-in-out infinite;
 }
 
 .hero-content{
@@ -101,7 +102,7 @@
     font-weight: 800;
     line-height: 0.9;
     letter-spacing: -3px;
-    animation: slideUp 1s ease forwards;
+    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-content h1 span{
@@ -115,11 +116,16 @@
     text-align: left;
 }
 
+.hero-badges{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 25px;
     padding: 10px 18px;
     background: rgba(255, 255, 255, .05);
     border: 1px solid rgba(255, 255, 255, .08);
@@ -128,9 +134,18 @@
     color: #cbd5e1;
     font-size: .9rem;
     font-weight: 500;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
 }
 
-.badge-dot {
+.hero-badge:nth-child(1){
+    animation-delay: 0.2s;
+}
+.hero-badge:nth-child(2){
+    animation-delay: 0.4s;
+}
+
+.badge-dot.blue {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -139,6 +154,17 @@
         0 0 10px rgba(125, 211, 252, .8);
     animation:
         pulseDot 2s ease infinite;
+}
+
+.badge-dot.green{
+    width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow:
+            0 0 10px rgba(125, 211, 252, .8);
+        animation:
+            pulseDot 2s ease infinite;
 }
 
 .hero-right{
@@ -198,6 +224,7 @@
     transform: translateY(-5px);
     box-shadow: 0 0 25px rgba(125, 211, 252, .4);
     border-color: #7dd3fc;
+    transform: translateY(-5px) scale(1.03);
 }
 
 .profile-container{
@@ -212,6 +239,11 @@
     transition: transform .25s ease-out;
 }
 
+.profile-container:hover .profile-image{
+    transform: scale(1.05);
+    box-shadow: 0 30px 80px rgba(125, 211, 252, .2);
+}
+
 .profile-image{
     width: 320px;
     height: 320px;
@@ -221,6 +253,7 @@
     z-index: 2;
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    transition: transform .5s ease, box-shadow .5s ease;
 }
 
 .profile-ring {
@@ -264,8 +297,6 @@
 }
 
 
-
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -293,14 +324,16 @@
     }
 }
 
-@keyframes floatOrb{
-    0%{
+@keyframes floatOrb {
+    0% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-25px);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
 }
@@ -323,11 +356,14 @@
     }
 }
 
-@keyframes twinkle{
-    0%, 100%{
+@keyframes twinkle {
+
+    0%,
+    100% {
         opacity: .2;
     }
-    50%{
+
+    50% {
         opacity: .8;
     }
 }
@@ -359,6 +395,47 @@
     100% {
         transform: scale(1);
         opacity: .7;
+    }
+
+}
+
+@keyframes pulseBg {
+
+    0%,
+    100% {
+        opacity: .015;
+    }
+
+    50% {
+        opacity: .035;
+    }
+
+}
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeInUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }

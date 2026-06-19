@@ -77,7 +77,7 @@ function Hero() {
 
 
     return (
-        <section className="hero" onMouseMove={handleMove}>
+        <section className="hero" id="hero" onMouseMove={handleMove}>
             <div className="spotlight" style={{
                 left: position.x,
                 top: position.y
@@ -99,9 +99,18 @@ function Hero() {
             </div>
             <div className="hero-content">
                 <div className="hero-left">
-                    <div className="hero-badge">
-                        <span className="badge-dot"></span>
-                        Available for Internships
+                    <div className="hero-badges">
+
+                        <div className="hero-badge internship">
+                            <span className="badge-dot blue"></span>
+                            Available for Internships
+                        </div>
+
+                        <div className="hero-badge building">
+                            <span className="badge-dot green"></span>
+                            Building Projects
+                        </div>
+
                     </div>
                      <h1>
                         DURGESH 

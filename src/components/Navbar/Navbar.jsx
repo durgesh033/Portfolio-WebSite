@@ -1,11 +1,9 @@
 import "./Navbar.css"
+import profileImg from "../../../D.png"
 
 function Navbar() {
     return (
         <nav className="navbar">
-            <div className="nav-logo">
-                <span>D</span>
-            </div>
 
             <ul className="nav-links">
                 <li><a href="#about">About</a></li>
@@ -14,9 +12,6 @@ function Navbar() {
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <a href="./Durgesh_Resume.pdf" className="nav-btn">
-            Resume
-            </a>
         </nav>
     );
 }
