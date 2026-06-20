@@ -1,5 +1,4 @@
 import "./Navbar.css"
-import profileImg from "../../../D.png"
 
 function Navbar() {
     return (

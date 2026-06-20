@@ -2,6 +2,14 @@
   --bg: #020617;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
 body {
   background:
     radial-gradient(circle at top,
@@ -13,3 +21,4 @@ body {
 
   overflow-x: hidden;
 }
+

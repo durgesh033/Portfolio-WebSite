@@ -1,14 +1,10 @@
 .navbar {
     position: fixed;
-    top: 45px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 85%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 1000;
+    width: fit-content;
 }
 
 .nav-links {
@@ -29,6 +25,10 @@
 
     transition:all .35s ease;
     position: relative;
+}
+
+.nav-links a.active {
+    color: #7dd3fc;
 }
 
 .nav-links a::after {

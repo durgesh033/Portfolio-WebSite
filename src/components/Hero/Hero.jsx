@@ -1,5 +1,6 @@
 import "./Hero.css"
-import profileImg from "../../../profile.png"
+import profileImg from "../../../assets/profile.png"
+import resume from "../../../assets/Durgesh_Resume.pdf"
 import { useState, useEffect } from "react";
 import { useMemo } from "react";
 
@@ -121,8 +122,11 @@ function Hero() {
                     <p>Crafting modern digital experiences with React, Python and intelligent systems.</p>
 
                     <div className="hero-btns">
-                        <button>View Work</button>
-                        <button>Resume</button>
+                        <a href="#projects" className="hero-btn">
+                            <button>View Work</button>
+                        </a>
+                        <a href={resume} target="_blank" rel="noopener noreferrer" className="hero-btn">
+                        <button>Resume</button></a>
                     </div>
                 </div>
 
