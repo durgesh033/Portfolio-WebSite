@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import "./App.css";
 
+import Projects from "./components/Projects/Projects";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -51,6 +51,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Projects />
     </>
   );
 }

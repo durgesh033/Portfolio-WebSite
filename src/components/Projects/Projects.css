@@ -1,0 +1,256 @@
+a {
+    color: inherit;
+}
+
+.projects {
+    min-height: 100vh;
+    padding: 10px 10% 80px;
+    position: relative;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.project-card {
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter:
+        blur(20px);
+
+    transition: .4s ease;
+}
+.project-card:hover {
+    transform:
+        translateY(-10px);
+    border-color:
+        rgba(125, 211, 252, .4);
+    box-shadow:
+        0 20px 60px rgba(125, 211, 252, .12);
+}
+
+.project-card:hover .project-image {
+
+    transform: scale(1.05);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to top,
+            rgba(2, 6, 23, .55),
+            transparent 60%);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #020617;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(to top,
+            rgba(2, 6, 23, .6),
+            transparent);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+
+    color: #fff;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background:
+        rgba(125, 211, 252, .08);
+    border:
+        1px solid rgba(125, 211, 252, .15);
+    color:
+        #7dd3fc;
+    font-size: .85rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    font-size: .92rem;
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: #ef4444;
+    color: white;
+
+    border: 1px solid #ef4444;
+    border-radius: 14px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.live-btn:hover {
+    background: white;
+    color: #ef4444;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, .25);
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: #2f3337;
+    color: white;
+
+    border: 1px solid #444;
+    border-radius: 14px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.github-btn:hover {
+    background: white;
+    color: #111827;
+
+    transform: translateY(-3px);
+}
+
+.live-btn svg {
+    transition: .3s ease;
+}
+
+.live-btn:hover svg {
+    color: #ef4444;
+}
+
+.github-btn svg {
+    font-size: 1.1rem;
+}
+
+.demo-btn svg {
+    font-size: .9rem;
+}
+
+
+.project-links a:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(125, 211, 252, .15);
+
+    box-shadow:
+        0 10px 25px rgba(125, 211, 252, .15);
+}
+
+.project-image {
+
+    height: 200px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 4rem;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(125, 211, 252, .18),
+            transparent 70%);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+}
