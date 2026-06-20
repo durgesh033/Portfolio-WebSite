@@ -1,6 +1,6 @@
 .hero{
     position: relative;
-    min-height: 100vh;
+    min-height: 95vh;
     padding: 120px 10% 60px;
     display: flex;
     justify-content: center;
@@ -44,28 +44,6 @@
     filter: blur(120px);
     animation: float 8s ease-in-out infinite;
     z-index: 1;
-}
-
-.particles{
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.particles span{
-    position: absolute;
-    bottom: -100px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #7dd3fc;
-    opacity: .4;
-    box-shadow: 0 0 10px rgba(125, 211, 252, .6);
-    animation: particleFloat linear infinite, 
-    twinkle 3s ease-in-out infinite;
-
 }
 
 .bg-title {
@@ -337,36 +315,6 @@
 
     100% {
         transform: translateY(0);
-    }
-}
-
-@keyframes particleFloat {
-
-    0% {
-        transform:
-            translateY(0) translateX(0);
-    }
-
-    50% {
-        transform:
-            translateY(-60vh) translateX(30px);
-    }
-
-    100% {
-        transform:
-            translateY(-120vh) translateX(-20px);
-    }
-}
-
-@keyframes twinkle {
-
-    0%,
-    100% {
-        opacity: .2;
-    }
-
-    50% {
-        opacity: .8;
     }
 }
 

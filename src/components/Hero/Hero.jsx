@@ -1,8 +1,8 @@
-import "./Hero.css"
-import profileImg from "../../../assets/profile.png"
-import resume from "../../../assets/Durgesh_Resume.pdf"
+import "./Hero.css";
+import profileImg from "../../../assets/profile.png";
+import resume from "../../../assets/Durgesh_Resume.pdf";
+
 import { useState, useEffect } from "react";
-import { useMemo } from "react";
 
 function Hero() {
 
@@ -23,11 +23,8 @@ function Hero() {
             y: e.clientY
         });
 
-        const x =
-            (e.clientX / window.innerWidth - 0.5);
-
-        const y =
-            (e.clientY / window.innerHeight - 0.5);
+        const x = (e.clientX / window.innerWidth - 0.5);
+        const y = (e.clientY / window.innerHeight - 0.5);
 
         setMouse({
             x,
@@ -47,6 +44,7 @@ function Hero() {
     const [fade, setFade] = useState(true);
 
     useEffect(() => {
+
         const interval = setInterval(() => {
 
             setFade(false);
@@ -62,44 +60,30 @@ function Hero() {
         }, 2500);
 
         return () => clearInterval(interval);
+
     }, []);
 
-    const particles = useMemo(
-        () =>
-            Array.from({ length: 35 }, () => ({
-                left: Math.random() * 100,
-                delay: Math.random() * 20,
-                duration: 15 + Math.random() * 15,
-                size: 2 + Math.random() * 4
-            })),
-        []
-    );
-
-
-
     return (
-        <section className="hero" id="hero" onMouseMove={handleMove}>
-            <div className="spotlight" style={{
-                left: position.x,
-                top: position.y
-            }}></div>
+        <section
+            className="hero"
+            id="hero"
+            onMouseMove={handleMove}
+        >
+
+            <div
+                className="spotlight"
+                style={{
+                    left: position.x,
+                    top: position.y
+                }}
+            ></div>
+
             <div className="hero-bg"></div>
-            <div className="particles">
-                {particles.map((particle, i) => (
-                    <span
-                        key={i}
-                        style={{
-                            left: `${particle.left}%`,
-                            animationDelay: `${particle.delay}s`,
-                            animationDuration: `${particle.duration}s`,
-                            width: `${particle.size}px`,
-                            height: `${particle.size}px`
-                        }}
-                    />
-                ))}
-            </div>
+
             <div className="hero-content">
+
                 <div className="hero-left">
+
                     <div className="hero-badges">
 
                         <div className="hero-badge internship">
@@ -113,31 +97,63 @@ function Hero() {
                         </div>
 
                     </div>
-                     <h1>
-                        DURGESH 
+
+                    <h1>
+                        DURGESH
                         <span>KUMAR ROUT</span>
                     </h1>
 
-                    <h2 className={`role-switcher ${fade ? "show" : "hide"}`}>{roles[currentRole]}</h2>
-                    <p>Crafting modern digital experiences with React, Python and intelligent systems.</p>
+                    <h2
+                        className={`role-switcher ${fade ? "show" : "hide"}`}
+                    >
+                        {roles[currentRole]}
+                    </h2>
+
+                    <p>
+                        Crafting modern digital experiences with React,
+                        Python and intelligent systems.
+                    </p>
 
                     <div className="hero-btns">
+
                         <a href="#projects" className="hero-btn">
                             <button>View Work</button>
                         </a>
-                        <a href={resume} target="_blank" rel="noopener noreferrer" className="hero-btn">
-                        <button>Resume</button></a>
+
+                        <a
+                            href={resume}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hero-btn"
+                        >
+                            <button>Resume</button>
+                        </a>
+
                     </div>
+
                 </div>
 
                 <div className="hero-right">
-                    <div className="profile-container" style={{transform:`translate(${mouse.x*25}px, ${mouse.y*25}px)` }} >
+
+                    <div
+                        className="profile-container"
+                        style={{
+                            transform: `translate(${mouse.x * 25}px, ${mouse.y * 25}px)`
+                        }}
+                    >
                         <div className="profile-ring"></div>
-                        <img src={profileImg} alt="Durgesh" className="profile-image"></img>
+
+                        <img
+                            src={profileImg}
+                            alt="Durgesh"
+                            className="profile-image"
+                        />
                     </div>
-                    
+
                 </div>
+
             </div>
+
         </section>
     );
 }

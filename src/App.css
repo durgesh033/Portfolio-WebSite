@@ -8,6 +8,10 @@ html {
 
 section {
   scroll-margin-top: 100px;
+
+  /* Keeps all sections above particles */
+  position: relative;
+  z-index: 1;
 }
 
 body {
@@ -17,8 +21,71 @@ body {
       #020617);
 
   color: white;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Sora", sans-serif;
 
   overflow-x: hidden;
 }
 
+#root {
+  min-height: 100vh;
+}
+
+.global-particles {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.global-particles span {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: #7dd3fc;
+  opacity: .35;
+  box-shadow:
+    0 0 8px rgba(125, 211, 252, .7);
+
+  animation:
+    particleFloat linear infinite,
+    twinkle 3s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+
+  0% {
+    transform:
+      translateY(0) translateX(0);
+  }
+
+  50% {
+    transform:
+      translateY(-45vh) translateX(25px);
+  }
+
+  100% {
+    transform:
+      translateY(-100vh) translateX(-15px);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: .2;
+  }
+
+  50% {
+    opacity: .8;
+  }
+}

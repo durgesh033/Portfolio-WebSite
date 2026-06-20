@@ -15,11 +15,9 @@ import {
 } from "react-icons/si";
 
 function About() {
-
     return (
         <section className="about" id="about">
 
-            {/* Section Title */}
 
             <h2
                 className="section-title"
@@ -29,12 +27,13 @@ function About() {
                 About Me
             </h2>
 
-
             <div className="about-container">
 
                 <div
                     className="about-card"
-                    data-aos="fade-right">
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                >
                     <h3>Who I Am</h3>
 
                     <p>
@@ -46,7 +45,9 @@ function About() {
 
                 <div
                     className="about-card"
-                    data-aos="fade-left">
+                    data-aos="fade-left"
+                    data-aos-duration="1000"
+                >
                     <h3>What I Do</h3>
 
                     <p>
@@ -58,12 +59,15 @@ function About() {
 
             </div>
 
+
             <div className="tech-stack">
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="100"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <FaReact className="tech-icon" />
@@ -73,8 +77,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="200"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <FaNodeJs className="tech-icon" />
@@ -84,8 +90,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="300"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <SiMongodb className="tech-icon" />
@@ -95,8 +103,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="400"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <SiExpress className="tech-icon" />
@@ -106,8 +116,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="500"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <FaPython className="tech-icon" />
@@ -117,8 +129,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="600"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <SiTensorflow className="tech-icon" />
@@ -128,8 +142,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="700"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <SiFastapi className="tech-icon" />
@@ -139,8 +155,10 @@ function About() {
 
                 <div
                     className="tech-aos-wrapper"
-                    data-aos="flip-left"
+                    data-aos="fade-up"
                     data-aos-delay="800"
+                    data-aos-duration="800"
+                    data-aos-anchor-placement="top-bottom"
                 >
                     <div className="tech-card">
                         <FaGitAlt className="tech-icon" />
