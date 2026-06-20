@@ -171,13 +171,15 @@ a {
 }
 
 .live-btn:hover {
-    background: white;
-    color: #ef4444;
+    background: #fff;
+        color: #ff3b3b;
+        border-color: #fff;
+}
 
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 25px rgba(239, 68, 68, .25);
+.live-btn:hover i,
+.live-btn:hover svg {
+    color: #ff3b3b;
+    fill: #ff3b3b;
 }
 
 .github-btn {
@@ -223,17 +225,6 @@ a {
 }
 
 
-.project-links a:hover {
-
-    transform:
-        translateY(-3px);
-
-    background:
-        rgba(125, 211, 252, .15);
-
-    box-shadow:
-        0 10px 25px rgba(125, 211, 252, .15);
-}
 
 .project-image {
 

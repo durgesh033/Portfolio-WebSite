@@ -1,0 +1,588 @@
+.skills-section {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(97, 218, 251, 0.25);
+
+    box-shadow:
+        0 15px 40px rgba(97, 218, 251, 0.08);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #7dd3fc;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    margin-bottom: 20px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-tags span {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.react {
+    color: #61DAFB;
+
+    background: rgba(97, 218, 251, 0.15);
+
+    border: 1px solid rgba(97, 218, 251, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(97, 218, 251, 0.1),
+        0 0 20px rgba(97, 218, 251, 0.08);
+}
+
+.react:hover {
+    background: rgba(97, 218, 251, 0.25);
+
+    border-color: #61DAFB;
+
+    box-shadow:
+        0 0 20px rgba(97, 218, 251, 0.3),
+        0 0 40px rgba(97, 218, 251, 0.15);
+
+    transform: translateY(-2px);
+}
+
+.react svg {
+    transition: transform 0.6s ease;
+}
+
+.react:hover svg {
+    transform: rotate(180deg);
+}
+.react:hover svg {
+    animation: reactSpin 8s linear infinite;
+}
+
+.javascript {
+    color: #F7DF1E;
+
+    background: rgba(247, 223, 30, 0.12);
+
+    border: 1px solid rgba(247, 223, 30, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(247, 223, 30, 0.08),
+        0 0 20px rgba(247, 223, 30, 0.05);
+}
+
+.javascript:hover {
+    background: rgba(247, 223, 30, 0.2);
+
+    border-color: #F7DF1E;
+
+    box-shadow:
+        0 0 20px rgba(247, 223, 30, 0.25),
+        0 0 40px rgba(247, 223, 30, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.javascript svg {
+    font-size: 1rem;
+}
+
+.javascript:hover svg {
+    animation: jsPulse 0.8s ease infinite alternate;
+}
+
+.html {
+    color: #E34F26;
+
+    background: rgba(227, 79, 38, 0.12);
+
+    border: 1px solid rgba(227, 79, 38, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(227, 79, 38, 0.08),
+        0 0 20px rgba(227, 79, 38, 0.05);
+}
+
+.html:hover {
+    background: rgba(227, 79, 38, 0.2);
+
+    border-color: #E34F26;
+
+    box-shadow:
+        0 0 20px rgba(227, 79, 38, 0.25),
+        0 0 40px rgba(227, 79, 38, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.html:hover svg {
+    animation: htmlFloat 0.8s ease infinite alternate;
+}
+
+.css {
+    color: #1572B6;
+
+    background: rgba(21, 114, 182, 0.12);
+
+    border: 1px solid rgba(21, 114, 182, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(21, 114, 182, 0.08),
+        0 0 20px rgba(21, 114, 182, 0.05);
+}
+
+.css:hover {
+    background: rgba(21, 114, 182, 0.2);
+
+    border-color: #1572B6;
+
+    box-shadow:
+        0 0 20px rgba(21, 114, 182, 0.25),
+        0 0 40px rgba(21, 114, 182, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.css:hover svg {
+    animation: cssWave 1s ease-in-out infinite;
+}
+
+.node {
+    color: #68A063;
+
+    background: rgba(104, 160, 99, 0.12);
+
+    border: 1px solid rgba(104, 160, 99, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(104, 160, 99, 0.08),
+        0 0 20px rgba(104, 160, 99, 0.05);
+}
+
+.node:hover {
+    background: rgba(104, 160, 99, 0.2);
+
+    border-color: #68A063;
+
+    box-shadow:
+        0 0 20px rgba(104, 160, 99, 0.25),
+        0 0 40px rgba(104, 160, 99, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.node:hover svg {
+    animation: nodeBounce 0.8s ease infinite alternate;
+}
+
+.express {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.express:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-2px);
+}
+
+.express:hover svg {
+    animation: expressTilt 1s ease infinite;
+}
+
+
+.fastapi {
+    color: #009688;
+
+    background: rgba(0, 150, 136, 0.12);
+
+    border: 1px solid rgba(0, 150, 136, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 150, 136, 0.08),
+        0 0 20px rgba(0, 150, 136, 0.05);
+}
+
+.fastapi:hover {
+    background: rgba(0, 150, 136, 0.2);
+
+    border-color: #00C7B7;
+
+    box-shadow:
+        0 0 20px rgba(0, 199, 183, 0.25),
+        0 0 40px rgba(0, 199, 183, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.fastapi:hover svg {
+    animation: fastapiPulse 0.7s ease infinite alternate;
+}
+
+.mongodb {
+    color: #00ED64;
+
+    background: rgba(0, 237, 100, 0.12);
+
+    border: 1px solid rgba(0, 237, 100, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 237, 100, 0.08),
+        0 0 20px rgba(0, 237, 100, 0.05);
+}
+
+.mongodb:hover {
+    background: rgba(0, 237, 100, 0.2);
+
+    border-color: #00ED64;
+
+    box-shadow:
+        0 0 20px rgba(0, 237, 100, 0.25),
+        0 0 40px rgba(0, 237, 100, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.mongodb:hover svg {
+    animation: mongoLeaf 1.2s ease-in-out infinite;
+}
+
+
+
+.mysql {
+    color: #00758F;
+
+    background: rgba(0, 117, 143, 0.12);
+
+    border: 1px solid rgba(0, 117, 143, 0.35);
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 117, 143, 0.08),
+        0 0 20px rgba(0, 117, 143, 0.05);
+}
+
+.mysql:hover {
+    background: rgba(0, 117, 143, 0.2);
+
+    border-color: #00A4C7;
+
+    box-shadow:
+        0 0 20px rgba(0, 164, 199, 0.25),
+        0 0 40px rgba(0, 164, 199, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.mysql:hover svg {
+    animation: mysqlWave 1s ease-in-out infinite;
+}
+
+
+.python {
+    color: #3776AB;
+
+    background: rgba(55, 118, 171, 0.12);
+
+    border: 1px solid rgba(55, 118, 171, 0.35);
+}
+
+.python:hover {
+    background: rgba(55, 118, 171, 0.2);
+
+    border-color: #4B8BBE;
+
+    box-shadow:
+        0 0 20px rgba(75, 139, 190, 0.25),
+        0 0 40px rgba(75, 139, 190, 0.12);
+
+    transform: translateY(-2px);
+}
+
+.python:hover svg {
+    animation: pythonFloat 1s ease-in-out infinite alternate;
+}
+
+
+.sklearn {
+    color: #F7931E;
+
+    background: rgba(247, 147, 30, 0.12);
+
+    border: 1px solid rgba(247, 147, 30, 0.35);
+}
+
+.sklearn:hover {
+    background: rgba(247, 147, 30, 0.2);
+
+    border-color: #F7931E;
+
+    box-shadow:
+        0 0 20px rgba(247, 147, 30, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.sklearn:hover svg {
+    animation: sklearnRotate 1s linear infinite;
+}
+
+
+.pandas {
+    color: #A78BFA;
+
+    background: rgba(167, 139, 250, 0.12);
+
+    border: 1px solid rgba(167, 139, 250, 0.35);
+}
+
+.pandas:hover {
+    background: rgba(167, 139, 250, 0.2);
+
+    border-color: #A78BFA;
+
+    box-shadow:
+        0 0 20px rgba(167, 139, 250, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.pandas:hover svg {
+    animation: pandasPulse 0.8s ease infinite alternate;
+}
+
+
+.ml {
+    color: #61DAFB;
+
+    background: rgba(97, 218, 251, 0.12);
+
+    border: 1px solid rgba(97, 218, 251, 0.35);
+}
+
+.ml:hover {
+    background: rgba(97, 218, 251, 0.2);
+
+    border-color: #61DAFB;
+
+    box-shadow:
+        0 0 20px rgba(97, 218, 251, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.ml:hover svg {
+    animation: brainThink 1s ease infinite alternate;
+}
+
+@keyframes brainThink {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fastapiPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes nodeBounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes jsPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes htmlFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+}
+
+
+@keyframes cssWave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(8deg);
+    }
+
+    75% {
+        transform: rotate(-8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes reactSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pandasPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes sklearnRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pythonFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes mysqlWave {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes mongoLeaf {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(6deg);
+    }
+
+    75% {
+        transform: rotate(-6deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes expressTilt {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
