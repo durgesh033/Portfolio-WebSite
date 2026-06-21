@@ -1,13 +1,23 @@
 import "./Projects.css";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useRef } from "react";
 import rentxImg from "../../assets/projects/rentx.png";
 import fakeNewsImg from "../../assets/projects/fakenews.png";
 import urlImg from "../../assets/projects/malicious.png";
 import lucyImg from "../../assets/projects/lucy.png";
 
+import {
+    FaGithub,
+    FaExternalLinkAlt,
+    FaCar,
+    FaNewspaper,
+    FaShieldAlt,
+    FaRobot
+} from "react-icons/fa";
+
 const projects = [
     {
         title: "RentX",
+        icon: <FaCar />,
         description:
             "Luxury car rental platform with modern UI, online booking and premium user experience.",
         tech: ["React", "Node.js", "MongoDB"],
@@ -18,6 +28,7 @@ const projects = [
 
     {
         title: "Fake News Detector",
+        icon : <FaNewspaper />,
         description:
             "Machine learning model that detects fake and real news articles with high accuracy.",
         tech: ["Python", "Scikit-Learn", "Streamlit"],
@@ -28,6 +39,7 @@ const projects = [
 
     {
         title: "Malicious URL Detector",
+        icon : <FaShieldAlt />,
         description:
             "ML-powered system that identifies phishing and malicious URLs in real time.",
         tech: ["Python", "Random Forest", "Pandas"],
@@ -38,6 +50,7 @@ const projects = [
 
     {
         title: "Project Lucy",
+        icon : <FaRobot />,
         description:
             "Enterprise AI assistant built using LLMs, FastAPI and modern AI infrastructure.",
         tech: ["FastAPI", "Ollama", "LLMs"],
@@ -46,6 +59,22 @@ const projects = [
         demo: null,
     }
 ];
+
+const carouselRef = useRef(null);
+
+const scrollLeft = () => {
+    carouselRef.current?.scrollBy({
+        left: -600,
+        behavior: "smooth",
+    });
+};
+
+const scrollRight = () => {
+    carouselRef.current?.scrollBy({
+        left: 600,
+        behavior: "smooth",
+    });
+};
 
 
 function Projects() {
@@ -59,7 +88,28 @@ function Projects() {
                 Featured Projects
             </h2>
 
-            <div className="projects-grid">
+            <div className="carousel-controls">
+
+                <button
+                    className="carousel-btn"
+                    onClick={scrollLeft}
+                >
+                    ←
+                </button>
+
+                <button
+                    className="carousel-btn"
+                    onClick={scrollRight}
+                >
+                    →
+                </button>
+
+            </div>
+
+            <div
+                className="projects-grid"
+                ref={carouselRef}
+            >
 
                 {projects.map((project, index) => (
 
@@ -70,26 +120,36 @@ function Projects() {
                         data-aos-delay={index * 100}
                     >
 
-                        <div className="project-image">
+                        {/*<div className="project-image">
                             <img
                                 src={project.image}
                                 alt={project.title}
                             />
-                        </div>
+                        </div>*/}
 
                         <div className="project-content">
 
+                            <span className="project-number">
+                                {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <div className="project-icon">
+                                {project.icon}
+                            </div>
+
                             <h3>{project.title}</h3>
+
+                            <div className="project-line"></div>
 
                             <p>{project.description}</p>
 
-                            <div className="project-tags">
-
-                                {project.tech.map((item, i) => (
-                                    <span key={i}>{item}</span>
+                            <div className="project-tech">
+                                {project.tech.map((tech, idx) => (
+                                    <span key={idx}>{tech}</span>
                                 ))}
-
                             </div>
+
+                        </div>
 
                             <div className="project-links">
 
@@ -116,9 +176,6 @@ function Projects() {
                             </div>
 
                         </div>
-
-                    </div>
-
                 ))}
 
             </div>
