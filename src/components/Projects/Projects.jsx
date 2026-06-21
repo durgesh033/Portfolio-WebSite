@@ -1,5 +1,4 @@
 import "./Projects.css";
-import { useRef } from "react";
 import rentxImg from "../../assets/projects/rentx.png";
 import fakeNewsImg from "../../assets/projects/fakenews.png";
 import urlImg from "../../assets/projects/malicious.png";
@@ -18,6 +17,7 @@ const projects = [
     {
         title: "RentX",
         icon: <FaCar />,
+        tagline: "Book a premium ride in three taps.",
         description:
             "Luxury car rental platform with modern UI, online booking and premium user experience.",
         tech: ["React", "Node.js", "MongoDB"],
@@ -28,7 +28,8 @@ const projects = [
 
     {
         title: "Fake News Detector",
-        icon : <FaNewspaper />,
+        icon: <FaNewspaper />,
+        tagline: "Spot misinformation before it spreads.",
         description:
             "Machine learning model that detects fake and real news articles with high accuracy.",
         tech: ["Python", "Scikit-Learn", "Streamlit"],
@@ -39,7 +40,8 @@ const projects = [
 
     {
         title: "Malicious URL Detector",
-        icon : <FaShieldAlt />,
+        icon: <FaShieldAlt />,
+        tagline: "Catch phishing links before they catch you.",
         description:
             "ML-powered system that identifies phishing and malicious URLs in real time.",
         tech: ["Python", "Random Forest", "Pandas"],
@@ -49,8 +51,9 @@ const projects = [
     },
 
     {
-        title: "Project Lucy",
-        icon : <FaRobot />,
+        title: "Lucy Enterprise",
+        icon: <FaRobot />,
+        tagline: "An AI assistant built for the enterprise.",
         description:
             "Enterprise AI assistant built using LLMs, FastAPI and modern AI infrastructure.",
         tech: ["FastAPI", "Ollama", "LLMs"],
@@ -60,124 +63,101 @@ const projects = [
     }
 ];
 
-const carouselRef = useRef(null);
-
-const scrollLeft = () => {
-    carouselRef.current?.scrollBy({
-        left: -600,
-        behavior: "smooth",
-    });
-};
-
-const scrollRight = () => {
-    carouselRef.current?.scrollBy({
-        left: 600,
-        behavior: "smooth",
-    });
-};
-
-
 function Projects() {
+
     return (
         <section className="projects" id="projects">
 
-            <h2
-                className="section-title"
-                data-aos="fade-up"
-            >
+            <h2 className="section-title" data-aos="fade-up">
                 Featured Projects
             </h2>
 
-            <div className="carousel-controls">
+            <div className="projects-viewport">
+                <div className="projects-row">
 
-                <button
-                    className="carousel-btn"
-                    onClick={scrollLeft}
-                >
-                    ←
-                </button>
+                    {projects.map((project, index) => (
 
-                <button
-                    className="carousel-btn"
-                    onClick={scrollRight}
-                >
-                    →
-                </button>
+                        <article
+                            key={project.title}
+                            className="project-card"
+                            data-aos="fade-up"
+                            data-aos-delay={index * 80}
+                        >
 
-            </div>
-
-            <div
-                className="projects-grid"
-                ref={carouselRef}
-            >
-
-                {projects.map((project, index) => (
-
-                    <div
-                        key={index}
-                        className="project-card"
-                        data-aos="zoom-in-up"
-                        data-aos-delay={index * 100}
-                    >
-
-                        {/*<div className="project-image">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                            />
-                        </div>*/}
-
-                        <div className="project-content">
+                            {/* Default state */}
+                            <div className="project-thumb">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    loading="lazy"
+                                />
+                                <div className="thumb-shade" />
+                            </div>
 
                             <span className="project-number">
                                 {String(index + 1).padStart(2, "0")}
                             </span>
 
-                            <div className="project-icon">
-                                {project.icon}
+                            <div className="project-base">
+                                <div className="project-icon">{project.icon}</div>
+                                <h3>{project.title}</h3>
+                                <p className="project-tagline">{project.tagline}</p>
                             </div>
 
-                            <h3>{project.title}</h3>
+                            {/* Hover overlay */}
+                            <div className="project-overlay">
 
-                            <div className="project-line"></div>
+                                <div className="overlay-top">
+                                    <div className="project-icon">{project.icon}</div>
+                                    <span className="overlay-number">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                </div>
 
-                            <p>{project.description}</p>
+                                <h3>{project.title}</h3>
 
-                            <div className="project-tech">
-                                {project.tech.map((tech, idx) => (
-                                    <span key={idx}>{tech}</span>
-                                ))}
+                                <div className="project-line"></div>
+
+                                <p className="overlay-description">{project.description}</p>
+
+                                <div className="project-tech">
+                                    {project.tech.map((tech) => (
+                                        <span key={tech}>{tech}</span>
+                                    ))}
+                                </div>
+
+                                <div className="project-links">
+
+                                    {project.demo && (
+                                        <a
+                                            href={project.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="live-btn"
+                                        >
+                                            <FaExternalLinkAlt />
+                                            Live Demo
+                                        </a>
+                                    )}
+
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="github-btn"
+                                    >
+                                        <FaGithub />
+                                        GitHub
+                                    </a>
+
+                                </div>
+
                             </div>
 
-                        </div>
+                        </article>
+                    ))}
 
-                            <div className="project-links">
-
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="live-btn"
-                                >
-                                    <FaExternalLinkAlt />
-                                    Live Demo
-                                </a>
-
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="github-btn"
-                                >
-                                    <FaGithub />
-                                    GitHub
-                                </a>
-
-                            </div>
-
-                        </div>
-                ))}
-
+                </div>
             </div>
 
         </section>

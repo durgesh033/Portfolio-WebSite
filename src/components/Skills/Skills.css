@@ -1,6 +1,7 @@
 .skills-section {
     padding: 120px 10%;
     text-align: center;
+    min-height: 50vh;
 }
 
 .section-title {

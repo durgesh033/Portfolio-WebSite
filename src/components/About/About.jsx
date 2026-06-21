@@ -14,10 +14,24 @@ import {
     SiTensorflow
 } from "react-icons/si";
 
+const techStack = [
+    { icon: <FaReact />, label: "React" },
+    { icon: <FaNodeJs />, label: "Node.js" },
+    { icon: <SiMongodb />, label: "MongoDB" },
+    { icon: <SiExpress />, label: "Express" },
+    { icon: <FaPython />, label: "Python" },
+    { icon: <SiTensorflow />, label: "Machine Learning" },
+    { icon: <SiFastapi />, label: "FastAPI" },
+    { icon: <FaGitAlt />, label: "Git" },
+];
+
 function About() {
     return (
         <section className="about" id="about">
 
+            <span className="about-eyebrow" data-aos="fade-up">
+                Get to know me
+            </span>
 
             <h2
                 className="section-title"
@@ -34,6 +48,8 @@ function About() {
                     data-aos="fade-right"
                     data-aos-duration="1000"
                 >
+                    <span className="about-card-tag">Profile — 01</span>
+
                     <h3>Who I Am</h3>
 
                     <p>
@@ -48,6 +64,8 @@ function About() {
                     data-aos="fade-left"
                     data-aos-duration="1000"
                 >
+                    <span className="about-card-tag">Profile — 02</span>
+
                     <h3>What I Do</h3>
 
                     <p>
@@ -59,113 +77,20 @@ function About() {
 
             </div>
 
-
-            <div className="tech-stack">
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <FaReact className="tech-icon" />
-                        <span>React</span>
-                    </div>
+            <div
+                className="tech-marquee"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="800"
+            >
+                <div className="tech-track">
+                    {[...techStack, ...techStack].map((tech, index) => (
+                        <div className="tech-chip" key={index} aria-hidden={index >= techStack.length}>
+                            <span className="tech-icon">{tech.icon}</span>
+                            <span>{tech.label}</span>
+                        </div>
+                    ))}
                 </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <FaNodeJs className="tech-icon" />
-                        <span>Node.js</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <SiMongodb className="tech-icon" />
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <SiExpress className="tech-icon" />
-                        <span>Express</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="500"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <FaPython className="tech-icon" />
-                        <span>Python</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="600"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <SiTensorflow className="tech-icon" />
-                        <span>Machine Learning</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="700"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <SiFastapi className="tech-icon" />
-                        <span>FastAPI</span>
-                    </div>
-                </div>
-
-                <div
-                    className="tech-aos-wrapper"
-                    data-aos="fade-up"
-                    data-aos-delay="800"
-                    data-aos-duration="800"
-                    data-aos-anchor-placement="top-bottom"
-                >
-                    <div className="tech-card">
-                        <FaGitAlt className="tech-icon" />
-                        <span>Git</span>
-                    </div>
-                </div>
-
             </div>
 
         </section>

@@ -23,15 +23,15 @@ export default function Contact() {
                 Have a project, internship opportunity, or just want to connect?
             </p>
 
-            <div
-                className="contact-links"
-                data-aos="fade-up"
-                data-aos-delay="400"
-            >
+            {/* No data-aos here anymore — the parent and its children were both
+                animating independently, which stacked their offsets and made
+                the buttons launch from much further down than intended. */}
+            <div className="contact-links">
                 <a
                     href="mailto:durgeshrout8@gmail.com"
                     className="contact-link email-btn"
                     target="_blank"
+                    rel="noopener noreferrer"
                     data-aos="fade-up"
                     data-aos-delay="300"
                 >
@@ -43,6 +43,7 @@ export default function Contact() {
                     href="https://github.com/durgesh033"
                     className="contact-link github-btn"
                     target="_blank"
+                    rel="noopener noreferrer"
                     data-aos="fade-up"
                     data-aos-delay="450"
                 >
@@ -54,6 +55,7 @@ export default function Contact() {
                     href="https://www.linkedin.com/in/durgesh-kumar-rout-183824260/"
                     className="contact-link linkedin-btn"
                     target="_blank"
+                    rel="noopener noreferrer"
                     data-aos="fade-up"
                     data-aos-delay="600"
                 >

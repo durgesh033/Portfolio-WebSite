@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
 .about {
-    min-height: 100vh;
+    --about-accent: #61DAFB;
+    --about-accent-soft: #7dd3fc;
+    --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    min-height: 50vh;
     padding: 50px 10% 100px;
     position: relative;
 }
 
+/* .section-title is shared across sections (About / Projects / Skills / Contact)
+   — intentionally left unscoped so it keeps working everywhere. */
 .section-title {
     text-align: center;
     font-size: 3.5rem;
@@ -11,208 +19,280 @@
     color: white;
 }
 
+.about-eyebrow {
+    display: block;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--about-accent-soft);
+    opacity: 0.8;
+    margin-bottom: 14px;
+}
 
-.about-container {
+/* ====================================================
+   Profile cards
+   ==================================================== */
+.about .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
 
-.about-card {
+.about .about-card {
     position: relative;
 
     padding: 45px;
 
     background: rgba(255, 255, 255, .04);
-
     border: 1px solid rgba(255, 255, 255, .08);
-
     backdrop-filter: blur(20px);
-
     border-radius: 30px;
 
     overflow: hidden;
-
     transition: .4s ease;
-
     transform-style: preserve-3d;
 }
 
-.about-card::before {
+.about .about-card::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
-    width: 100%;
+    right: 0;
     height: 2px;
 
-    background: linear-gradient(90deg,
-            transparent,
-            #7dd3fc,
-            transparent);
-
+    background: linear-gradient(90deg, transparent, var(--about-accent-soft), transparent);
+    background-size: 220% 100%;
     opacity: .6;
+
+    animation: aboutShimmer 6s ease-in-out infinite;
 }
 
-.about-card:hover {
-    transform:
-        translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.02);
+.about .about-card::after {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    right: -70px;
+    bottom: -70px;
 
-    box-shadow:
-        0 25px 60px rgba(125, 211, 252, .1);
+    background: radial-gradient(circle, rgba(125, 211, 252, .16), transparent 70%);
+    filter: blur(6px);
+    opacity: .5;
+    pointer-events: none;
+
+    transition: opacity .4s ease, transform .4s ease;
 }
 
-.about-card h3 {
+.about .about-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    box-shadow: 0 25px 60px rgba(125, 211, 252, .1);
+}
+
+.about .about-card:hover::after {
+    opacity: .9;
+    transform: scale(1.15);
+}
+
+.about .about-card-tag {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(125, 211, 252, .55);
+    margin-bottom: 16px;
+}
+
+.about .about-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #7dd3fc;
+    color: var(--about-accent-soft);
 }
 
-.about-card p {
+.about .about-card p {
+    font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
     line-height: 1.8;
     color: #cbd5e1;
 }
 
-.tech-stack {
+/* ====================================================
+   Tech marquee — continuous scrolling strip
+   ==================================================== */
+.about .tech-marquee {
+    position: relative;
     margin-top: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding-bottom: 20px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(90deg,
+            transparent 0,
+            #000 48px,
+            #000 calc(100% - 48px),
+            transparent 100%);
+    mask-image: linear-gradient(90deg,
+            transparent 0,
+            #000 48px,
+            #000 calc(100% - 48px),
+            transparent 100%);
 }
 
-.tech-stack::-webkit-scrollbar{
-    display: none;
+.about .tech-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    padding: 10px 0 20px;
+
+    animation: aboutMarquee 26s linear infinite;
 }
 
-.tech-aos-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    padding-top: 15px;
+.about .tech-track:hover {
+    animation-play-state: paused;
 }
 
-.tech-card {
-    width: 150px;
-    height: 150px;
-    flex-shrink: 0;
+.about .tech-chip {
+    flex: 0 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
+
+    padding: 16px 26px;
+
     background: rgba(255, 255, 255, .05);
     border: 1px solid rgba(255, 255, 255, .08);
     backdrop-filter: blur(20px);
-    border-radius: 32px;
-    transition: .4s ease;
-    animation: floatTech 5s ease-in-out infinite;
+    border-radius: 999px;
+
+    transition: .35s ease;
 }
 
-.tech-aos-wrapper:nth-child(2) .tech-card {
-    animation-delay: .5s;
+.about .tech-chip:hover {
+    transform: translateY(-6px);
+    border-color: rgba(125, 211, 252, .4);
+    background: rgba(125, 211, 252, .06);
 }
 
-.tech-aos-wrapper:nth-child(3) .tech-card {
-    animation-delay: 1s;
+.about .tech-chip .tech-icon {
+    font-size: 1.6rem;
+    color: var(--about-accent-soft);
+    transition: transform .5s ease;
 }
 
-.tech-aos-wrapper:nth-child(4) .tech-card {
-    animation-delay: 1.5s;
+.about .tech-chip:hover .tech-icon {
+    transform: rotateY(360deg) scale(1.15);
 }
 
-.tech-aos-wrapper:nth-child(5) .tech-card {
-    animation-delay: 2s;
-}
-
-.tech-aos-wrapper:nth-child(6) .tech-card {
-    animation-delay: 2.5s;
-}
-
-.tech-aos-wrapper:nth-child(7) .tech-card {
-    animation-delay: 3s;
-}
-
-.tech-aos-wrapper:nth-child(8) .tech-card {
-    animation-delay: 3.5s;
-}
-
-.tech-card:hover {
-    transform:
-        translateY(-12px) scale(1.05);
-
-    border-color:
-        rgba(125, 211, 252, .4);
-}
-
-.tech-icon {
-    font-size: 4rem;
-
-    color: #7dd3fc;
-
-    transition: .5s ease;
-}
-
-.tech-card:hover .tech-icon {
-    transform:
-        rotateY(360deg) scale(1.2);
-}
-
-.tech-card span {
-    color: #cbd5e1;
-
-    font-size: .95rem;
-
+.about .tech-chip span:last-child {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
     font-weight: 600;
+    color: #cbd5e1;
+    white-space: nowrap;
 }
 
-/* RESPONSIVE */
+/* ====================================================
+   Keyframes
+   ==================================================== */
+@keyframes aboutShimmer {
 
-@media (max-width: 992px) {
-
-    .about-container {
-        grid-template-columns: 1fr;
+    0%,
+    100% {
+        background-position: 0% 0;
     }
 
-    .tech-stack {
-        grid-template-columns: repeat(2, 1fr);
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes aboutMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ====================================================
+   RESPONSIVE
+   ==================================================== */
+@media (max-width: 992px) {
+    .about .about-container {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 600px) {
-
     .section-title {
         font-size: 2.5rem;
     }
 
-    .tech-stack {
-        grid-template-columns: 1fr;
+    .about {
+        padding: 50px 6% 90px;
     }
 
-    .tech-card {
-        width: 100%;
-        max-width: 220px;
+    .about .tech-marquee {
+        margin-top: 60px;
+        -webkit-mask-image: linear-gradient(90deg,
+                transparent 0,
+                #000 24px,
+                #000 calc(100% - 24px),
+                transparent 100%);
+        mask-image: linear-gradient(90deg,
+                transparent 0,
+                #000 24px,
+                #000 calc(100% - 24px),
+                transparent 100%);
+    }
+
+    .about .tech-chip {
+        padding: 12px 18px;
+        gap: 10px;
+    }
+
+    .about .tech-chip .tech-icon {
+        font-size: 1.3rem;
+    }
+
+    .about .tech-chip span:last-child {
+        font-size: 0.82rem;
     }
 }
 
+/* ====================================================
+   Motion preference
+   ==================================================== */
+@media (prefers-reduced-motion: reduce) {
 
-@keyframes floatTech {
-
-    0%,
-    100% {
-        transform: translateY(0);
+    .about .about-card,
+    .about .about-card::before,
+    .about .tech-track,
+    .about .tech-chip,
+    .about .tech-chip .tech-icon {
+        animation: none !important;
+        transition: none !important;
     }
 
-    50% {
-        transform: translateY(-3px);
+    .about .about-card:hover {
+        transform: none;
+    }
+
+    .about .tech-track {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* hide the duplicated half used to make the marquee loop seamlessly */
+    .about .tech-chip[aria-hidden="true"] {
+        display: none;
     }
 }

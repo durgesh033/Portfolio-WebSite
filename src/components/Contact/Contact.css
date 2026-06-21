@@ -37,6 +37,13 @@
     padding: 40px;
 }
 
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .contact-link {
     position: relative;
 
@@ -63,8 +70,11 @@
     transition: all 0.35s ease;
 }
 
+/* merged the two separate :hover rules that used to exist for this
+   selector — same effect, easier to scan */
 .contact-link:hover {
     transform: translateY(-5px);
+    animation: floatBtn 1.5s ease-in-out infinite;
 
     border-color: rgba(97, 218, 251, 0.5);
 
@@ -95,18 +105,6 @@
 
 .contact-link:hover::before {
     left: 140%;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-
-.contact-link:hover {
-    animation: floatBtn 1.5s ease-in-out infinite;
 }
 
 .email-btn {
@@ -188,5 +186,15 @@
 
     100% {
         transform: translateY(-5px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-link {
+        transition: none;
+    }
+
+    .contact-link:hover {
+        animation: none;
     }
 }

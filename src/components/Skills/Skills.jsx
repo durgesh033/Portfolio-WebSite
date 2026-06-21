@@ -114,7 +114,7 @@ const skills = [
 export default function Skills() {
     return (
         <section className="skills-section" id="skills">
-            <h2 className="section-title">Skills</h2>
+            <h2 className="section-title" data-aos="fade-up">Skills</h2>
 
             <div className="skills-grid">
                 {skills.map((skill, index) => (
