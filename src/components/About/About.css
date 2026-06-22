@@ -296,3 +296,22 @@
         display: none;
     }
 }
+
+@media (max-width: 768px) {
+
+    .about .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about .about-card {
+        padding: 25px;
+    }
+
+    .about .about-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .about .about-card p {
+        font-size: 0.95rem;
+    }
+}

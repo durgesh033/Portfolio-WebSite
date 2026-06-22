@@ -587,3 +587,14 @@
         transform: rotate(0deg);
     }
 }
+
+@media (max-width: 768px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+}

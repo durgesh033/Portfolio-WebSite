@@ -198,3 +198,19 @@
         animation: none;
     }
 }
+
+@media (max-width: 768px) {
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -82,7 +82,7 @@ function Hero() {
 
             <div className="hero-content">
 
-                <div className="hero-left">
+                <div className="hero-left" >
 
                     <div className="hero-badges">
 
@@ -133,7 +133,7 @@ function Hero() {
 
                 </div>
 
-                <div className="hero-right">
+                <div className="hero-right" data-aos="fade-left">
 
                     <div
                         className="profile-container"

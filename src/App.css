@@ -89,3 +89,39 @@ body {
     opacity: .8;
   }
 }
+
+/* =========================
+   TABLET
+   ========================= */
+@media (max-width: 1024px) {
+
+  .section-title {
+    font-size: 2.5rem !important;
+  }
+
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+  .section-title {
+    font-size: 2rem !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 1.7rem !important;
+  }
+}

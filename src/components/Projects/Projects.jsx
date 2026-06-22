@@ -73,15 +73,17 @@ function Projects() {
             </h2>
 
             <div className="projects-viewport">
-                <div className="projects-row">
+                <div
+                    className="projects-row"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                >
 
                     {projects.map((project, index) => (
 
                         <article
                             key={project.title}
                             className="project-card"
-                            data-aos="fade-up"
-                            data-aos-delay={index * 80}
                         >
 
                             {/* Default state */}

@@ -74,3 +74,18 @@
 .nav-links a:hover::before{
     width: 70%;
 }
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .navbar {
+        top: 15px;
+    }
+}
