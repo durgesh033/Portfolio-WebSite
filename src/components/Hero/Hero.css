@@ -1,4 +1,4 @@
-.hero{
+.hero {
     position: relative;
     min-height: 95vh;
     padding: 120px 10% 60px;
@@ -6,9 +6,7 @@
     justify-content: center;
     align-items: flex-start;
     overflow: hidden;
-    padding: 0 10%;
     user-select: none;
-    
 }
 
 .hero h1, .hero h2, .hero p{
@@ -391,57 +389,156 @@
 
 }
 
+/* =========================
+   TABLET
+========================= */
 @media (max-width: 1024px) {
 
-    .hero-container {
-        flex-direction: column;
+    .hero {
+        padding: 100px 5% 60px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
         text-align: center;
         gap: 60px;
+        margin-top: 120px;
     }
 
     .hero-left,
     .hero-right {
         width: 100%;
-    }
-
-    .hero-btns {
-        justify-content: center;
+        flex: unset;
     }
 
     .hero-badges {
         justify-content: center;
         flex-wrap: wrap;
     }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-container {
+        width: 350px;
+        height: 350px;
+    }
+
+    .profile-ring {
+        width: 350px;
+        height: 350px;
+    }
+
+    .profile-image {
+        width: 270px;
+        height: 270px;
+    }
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
+
+    .hero {
+        padding: 80px 5% 50px;
+    }
+
+    .hero-content {
+        margin-top: 80px;
+        gap: 40px;
+    }
 
     .hero-content h1 {
         font-size: 3rem;
+        letter-spacing: -1px;
     }
 
     .role-switcher {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        min-height: 40px;
     }
 
     .hero-content p {
         font-size: 1rem;
+        line-height: 1.7;
     }
 
     .hero-btns {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+    }
+
+    .hero-btns button {
+        width: 100%;
+    }
+
+    .profile-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .profile-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .bg-title {
+        display: none;
     }
 }
 
+/* =========================
+   SMALL MOBILE
+========================= */
 @media (max-width: 480px) {
 
     .hero-content h1 {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+
+    .role-switcher {
+        font-size: 1.1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
     }
 
     .hero-badge {
-        font-size: 0.8rem;
-        padding: 8px 14px;
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    .profile-container {
+        width: 230px;
+        height: 230px;
+    }
+
+    .profile-ring {
+        width: 230px;
+        height: 230px;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .spotlight {
+        display: none;
     }
 }
